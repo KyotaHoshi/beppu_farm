@@ -1,0 +1,121 @@
+$tab-photo-margin-bottom: 15px;
+$sp-photo-bottom-img-h: 36vw;
+
+.photo {
+    background: linear-gradient($back-highgreen, $back-lightgreen);
+    color: #fff;
+    .title {
+        @include sp {
+            margin-bottom: $tab-photo-margin-bottom;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @include sp {
+            position: relative;
+            padding-bottom: $sp-photo-bottom-img-h;
+        }
+        &__top, &__bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__top {
+            height: 20vw;
+            margin-bottom: 20px;
+            @include tab {
+                height: 24vw;
+                margin-bottom: $tab-photo-margin-bottom;
+            }
+            @include sp {
+                height: 42vw;
+            }
+            &__img1 {
+                width: 19vw;
+                @include tab {
+                    width: 23vw;
+                }
+                @include sp {
+                    width: 42vw;
+                }
+                img {
+                    height: 100%;
+                }
+            }
+            &__img2 {
+                width: 19vw;
+                @include tab {
+                    width: 25vw;
+                }
+                @include sp {
+                    width: 46vw;
+                }
+                img {
+                    height: 100%;
+                    @include tab {
+                        height: unset;
+                        width: 100%;
+                    }
+                }
+            }
+            &__img3 {
+                width: 32vw;
+                @include tab {
+                    width: 37vw;
+                }
+                @include sp {
+                    position: absolute;
+                    bottom: 0;
+                    height: $sp-photo-bottom-img-h;
+                    width: 50vw;
+                }
+                img {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+        &__bottom {
+            height: 25vw;
+            @include tab {
+                height: 30vw;
+            }
+            @include sp {
+                height: 45vw;
+                margin-bottom: $tab-photo-margin-bottom;
+            }
+            &__img1 {
+                width: 43vw;
+                @include tab {
+                    width: 55vw;
+                }
+                @include sp {
+                    width: 100%;
+                }
+                img {
+                    height: 100%;
+                    @include tab {
+                        height: unset;
+                        width: 100%;
+                    }
+                }
+            }
+            &__img2 {
+                width: 28vw;
+                @include tab {
+                    width: 32vw;
+                }
+                @include sp {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    height: $sp-photo-bottom-img-h;
+                    width: 38vw;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

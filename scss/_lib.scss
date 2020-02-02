@@ -1,0 +1,99 @@
+@charset "UTF-8";
+// 変数　色
+$font-green: #199B17;
+$back-highgreen: #0C600A;
+$back-lightgreen: #159E13;
+
+// 変数　値
+$pc-header-w: 17.2%;
+$tab-header-h: 65px;
+$title-margin: 15px;
+$sp-title-margin: 5px;
+
+// フォント
+
+// media
+
+@mixin pc {
+    @media screen and (min-width: 960px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media screen and (max-width: 959px) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+// 全体のスタイル
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Bookman Old Style';
+    color: $font-green;
+}
+
+.left__space {
+    margin-left: $pc-header-w;
+    @include tab {
+        margin: 0;
+    }
+}
+
+.inner {
+    padding: 57px 6% 47px;
+    @include tab {
+        padding: 45px 5% 40px;
+    }
+    @include sp {
+        padding: 27px 5% 35px;
+    }
+}
+
+.title {
+    font-size: 3.7rem;
+    font-weight: bold;
+    margin-bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include tab {
+        margin-bottom: 30px;
+        font-size: 3rem;
+    }
+    @include sp {
+        margin-bottom: 25px;
+        font-size: 2rem;
+    }
+    &:before, &:after {
+        display: inline-block;
+        content: "";
+        width: 1em;
+        border-top: solid 2px;
+        @include sp {
+            width: 0.7em;
+        }
+    } 
+    &:before {
+        margin-right: $title-margin;
+        @include sp {
+            margin-right: $sp-title-margin;
+        }
+    }
+    &:after {
+        margin-left: $title-margin;
+        @include sp {
+            margin-left: $sp-title-margin;
+        }
+    }
+}
